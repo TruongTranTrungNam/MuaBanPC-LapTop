@@ -1,0 +1,62 @@
+﻿@model IEnumerable<MuaBanPC_LapTop.Models.DonHang>
+
+@{
+    ViewData["Title"] = "Đơn Hàng";
+}
+
+<h1 style="color:orangered">Đơn Hàng của bạn</h1>
+
+<p>
+    <a style="text-decoration:none;color:black" asp-action="Create">Tạo mới</a>
+</p>
+
+<form asp-controller="DonHangs" asp-action="Index" method="get">
+    <p>
+
+        Tên sản phẩm: <input type="text" name="SearchString" />
+        <input type="submit" value="Tìm kiếm">
+    </p>
+</form>
+
+
+<table style="background-color:lightblue" class="table table-bordered">
+    <thead style="color:green">
+        <tr>
+            <th>
+                Tên Sản Phẩm
+            </th>
+            <th>
+                Ngày Mua
+            </th>
+            <th>
+                Số Lượng
+            </th>
+            <th>
+                Giá Tiền
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenSP)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NgayMua)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SoLuong)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GiaTien)
+                </td>
+                <td>
+                    <a class="btn btn-warning" style="color:black; text-decoration: none" asp-action="UserDetails" asp-route-id="@item.Id">Chi tiết</a> 
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

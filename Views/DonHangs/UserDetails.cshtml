@@ -1,0 +1,42 @@
+﻿@model MuaBanPC_LapTop.Models.DonHang
+
+@{
+    ViewData["Title"] = "Chi tiết";
+}
+
+<h1>Chi tiết đơn hàng</h1>
+
+<div>
+
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Tên sản phẩm
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TenSP)
+        </dd>
+        <dt class="col-sm-2">
+            Ngày mua
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NgayMua)
+        </dd>
+        <dt class="col-sm-2">
+            Số lượng
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SoLuong)
+        </dd>
+        <dt class="col-sm-2">
+            Giá tiền
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GiaTien)
+        </dd>
+    </dl>
+</div>
+<div>
+    
+    <a class="btn btn-secondary float-right" asp-action="trangchu1">Quay lại</a>
+</div>

@@ -1,0 +1,59 @@
+﻿@model IEnumerable<MuaBanPC_LapTop.Models.DonHang>
+
+@{ ViewData["Title"] = "Trang Chủ"; }
+
+
+<h1 style="color:orangered">Đơn Hàng của bạn</h1>
+
+
+
+<form asp-controller="DonHangs" asp-action="trangchu1" method="get">
+    <p>
+
+        Tên sản phẩm: <input type="text" name="SearchString" />
+        <input type="submit" value="Tìm kiếm">
+    </p>
+</form>
+
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+<div class="col-md-4 col-xs-6 border-primary mb-3">
+    <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+            <div class="col-md-12">
+                <div class="card-header text-black bg-warning">
+                    <p class="card-text">
+                        <h5 class="card-title">
+                            @item.TenSP
+                        </h5>
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <img src="https://gamek.mediacdn.vn/133514250583805952/2020/3/19/00-15846112114571807352651.png" width="100%" alt="@item.TenSP">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <p class="card-text"><b>Tên Sản phẩm </b>@item.TenSP</p>
+                    <p class="card-text"><b>Ngày Mua </b>@item.NgayMua</p>
+                    <p class="card-text"><b>Số Lượng </b>@item.SoLuong</p>
+                    <p class="card-text"><b>Giá Tiền </b>@item.GiaTien</p>
+
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="card-footer ">
+                    <p class="card-text">
+                        <a class="btn btn-secondary float-right" asp-action="UserDetails" asp-route-id="@item.Id">
+                            <i class="bi bi-eye-fill"></i> Xem thông tin
+                        </a>
+
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>}
+</div>

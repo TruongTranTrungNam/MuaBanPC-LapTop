@@ -1,0 +1,16 @@
+﻿.csw-media {
+    overflow: hidden;
+    display: inline-block;
+}
+
+    .csw-media img {
+        transition: 0.8s;
+    }
+
+    .csw-media:hover img {
+        transform: scale(1.2, 1.2);
+    }
+
+.text-lg-center {
+    text-decoration: none;
+}
