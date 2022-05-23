@@ -2,7 +2,8 @@
 
  Giao diện Trang chủ
 
-![image](https://user-images.githubusercontent.com/72543365/169761190-1bc6c03e-e672-4b75-bdfd-6b6c72eba309.png)
+![image](https://user-images.githubusercontent.com/72543365/169771028-2f469688-28fd-48f5-b5fa-b40a831e461b.png)
+
 
 ![image](https://user-images.githubusercontent.com/72543365/169761456-069e166b-8f3f-467e-ad81-16f155b3924a.png)
 
