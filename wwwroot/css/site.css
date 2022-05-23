@@ -1,6 +1,6 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
-
+@import url(//db.onlinewebfonts.com/c/cd0381aa3322dff4babd137f03829c8c?family=Tahoma);
 a.navbar-brand {
   white-space: normal;
   text-align: center;
@@ -56,6 +56,7 @@ button.accept-policy {
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
+    font-family:Tahoma;
   position: relative;
   min-height: 100%;
 }

@@ -40,25 +40,28 @@
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TenSP)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.NgayMua)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.SoLuong)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.GiaTien)
-                </td>
-                <td>
-                    <a style="color: orangered; text-decoration: none" asp-action="Edit" asp-route-id="@item.Id">Sửa</a> |
-                    <a style="color: orangered; text-decoration: none" asp-action="Details" asp-route-id="@item.Id">Chi tiết</a> |
-                    <a style="color: orangered; text-decoration: none" asp-action="Delete" asp-route-id="@item.Id">Xóa</a>
-                </td>
-            </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenSP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CauHinh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoLuong)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GiaTien)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProfilePicture)
+            </td>
+            <td>
+                <a style="color: orangered; text-decoration: none" asp-action="Edit" asp-route-id="@item.Id">Sửa</a> |
+                <a style="color: orangered; text-decoration: none" asp-action="Details" asp-route-id="@item.Id">Chi tiết</a> |
+                <a style="color: orangered; text-decoration: none" asp-action="Delete" asp-route-id="@item.Id">Xóa</a>
+            </td>
+        </tr>
         }
     </tbody>
 </table>

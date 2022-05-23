@@ -14,10 +14,10 @@ namespace MuaBanPC_LapTop.Models
         [StringLength(30, ErrorMessage = "Không dài quá {1} kí tự và không dưới {2} kí tự", MinimumLength = 1)]
         [Required(ErrorMessage = "Không được để trống")]
         public string TenSP { get; set; }
-        [Display(Name = "Ngày mua")]
-        [DataType(DataType.Date)]
+        [Display(Name = "Cấu Hình")]
+        
         [Required(ErrorMessage = "Không được để trống")]
-        public DateTime NgayMua { get; set; }
+        public string CauHinh { get; set; }
         [Display(Name = "Số lượng")]
         [Required(ErrorMessage = "Không được để trống")]
         public int SoLuong { get; set; }
@@ -26,5 +26,6 @@ namespace MuaBanPC_LapTop.Models
         [Required(ErrorMessage = "Không được để trống")]
 
         public decimal GiaTien { get; set; }
+        public string ProfilePicture { get; set; }
     }
 }

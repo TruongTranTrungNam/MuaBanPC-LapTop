@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MuaBanPC_LapTop.Data;
 
 namespace MuaBanPC_LapTop.Migrations
 {
     [DbContext(typeof(MuaBanPC_LapTopContext))]
-    partial class MuaBanPC_LapTopContextModelSnapshot : ModelSnapshot
+    [Migration("20220521012342_themanh")]
+    partial class themanh
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -2,41 +2,43 @@
 
 @{
     ViewData["Title"] = "Chi tiết";
+    var format = System.Globalization.CultureInfo.GetCultureInfo("vi-VN");
 }
 
-<h1>Chi tiết đơn hàng</h1>
+<h3>Chi tiết Sản phẩm</h3>
 
-<div>
+<div class="site-section">
+    <div class="container">
 
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            Tên sản phẩm
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TenSP)
-        </dd>
-        <dt class="col-sm-2">
-            Ngày mua
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.NgayMua)
-        </dd>
-        <dt class="col-sm-2">
-            Số lượng
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.SoLuong)
-        </dd>
-        <dt class="col-sm-2">
-            Giá tiền
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.GiaTien)
-        </dd>
-    </dl>
+        <div class="row">
+            <div class="col-md-6">
+                @*<h2 class="text-black"> @Model.TenSP</h2>*@
+                <img src="@Model.ProfilePicture" width="500" height="500" />
+            </div>
+
+            <div class="col-sm-6">
+
+                <h3> @Model.TenSP</h3>
+                <p>
+                    <strong class="text-danger h4">
+                        @String.Format(format, "{0:c0}", Model.GiaTien)
+                    </strong>
+                </p>
+                <p><b>Cấu Hình:</b> @Model.CauHinh</p>
+                <p class="mb-4"><b>Số lượng:</b> @Model.SoLuong</p>
+
+                <button type="submit" class="btn btn-success"> <i class="fas fa-shopping-cart"></i>
+                </button>
+
+                <a class="btn btn-primary" asp-action="trangchu1"> <i class="bi bi-skip-backward-fill ml-4"></i></a>
+
+            </div>
+
+
+        </div>
+    </div>
 </div>
-<div>
+@*<div>
     
     <a class="btn btn-secondary float-right" asp-action="trangchu1">Quay lại</a>
-</div>
+</div>*@

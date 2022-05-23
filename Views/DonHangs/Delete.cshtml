@@ -5,40 +5,43 @@
 }
 
 
-<h3>Bạn có muốn xóa đơn hàng ?</h3>
+<h3>Bạn có muốn xóa Sản phẩm ?</h3>
 <div>
     
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
-           Tên sản phẩm
+        <dt class="col-sm-2">
+            Tên sản phẩm
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.TenSP)
         </dd>
-        <dt class = "col-sm-2">
-            Ngày mua
+        <dt class="col-sm-2">
+            Cấu Hình
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.NgayMua)
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CauHinh)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             Số lượng
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.SoLuong)
         </dd>
-        <dt class = "col-sm-2">
-           Giá tiền
+        <dt class="col-sm-2">
+            Giá tiền
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.GiaTien)
+        </dd>
+        <dd class="col-sm-10">
+            <img src="@Model.ProfilePicture" asp-append-version="true" height="250" width="250" />
         </dd>
     </dl>
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="Id" />
         <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Quay lại</a>
+        <a asp-action="IndexAdmin" asp-controller="ADMIN">Quay lại</a>
     </form>
 </div>

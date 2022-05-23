@@ -4,12 +4,12 @@
     ViewData["Title"] = "Sửa";
 }
 
-<h1>Sửa đơn hàng</h1>
+<h1>Sửa Sản phẩm</h1>
 
 
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-8">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
@@ -19,9 +19,9 @@
                 <span asp-validation-for="TenSP" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="NgayMua" class="control-label"></label>
-                <input asp-for="NgayMua" class="form-control" />
-                <span asp-validation-for="NgayMua" class="text-danger"></span>
+                <label asp-for="CauHinh" class="control-label"></label>
+                <input asp-for="CauHinh" class="form-control" />
+                <span asp-validation-for="CauHinh" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="SoLuong" class="control-label"></label>
@@ -34,6 +34,11 @@
                 <span asp-validation-for="GiaTien" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="ProfilePicture" class="control-label"></label>
+                <input asp-for="ProfilePicture" class="form-control" />
+                <span asp-validation-for="ProfilePicture" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
@@ -41,7 +46,7 @@
 </div>
 
 <div>
-    <a asp-action="Index">Quay lại</a>
+    <a asp-action="IndexAdmin" asp-controller="ADMIN">Quay lại</a>
 </div>
 
 @section Scripts {

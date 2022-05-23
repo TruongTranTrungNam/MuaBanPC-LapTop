@@ -1,36 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MuaBanPC_LapTop.Data;
 using MuaBanPC_LapTop.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace MuaBanPC_LapTop.Controllers
 {
-    public class DonHangsController : Controller
+    public class ADMINController : Controller
     {
         private readonly MuaBanPC_LapTopContext _context;
 
-        public DonHangsController(MuaBanPC_LapTopContext context)
+        public ADMINController(MuaBanPC_LapTopContext context)
         {
             _context = context;
         }
-
-        // GET: DonHangs
-        public async Task<IActionResult> Index(string searchString)
-        {
-            var donhang = from b in _context.DonHang
-                        select b;
-            if (!String.IsNullOrEmpty(searchString))
-            {
-                donhang = donhang.Where(s => s.TenSP!.Contains(searchString));
-            }
-            return View(await donhang.ToListAsync());  
-        }
-
 
         public async Task<IActionResult> IndexAdmin(string searchString)
         {
@@ -43,77 +29,10 @@ namespace MuaBanPC_LapTop.Controllers
             return View(await donhang.ToListAsync());
         }
 
-        //Trang chủ sp  Nguời dùng (Userindex)
-        public async Task<IActionResult> UserIndex(string searchString)
-        {
-            var donhang = from b in _context.DonHang
-                          select b;
-            if (!String.IsNullOrEmpty(searchString))
-            {
-                donhang = donhang.Where(s => s.TenSP!.Contains(searchString));
-            }
-            return View(await donhang.ToListAsync());
-        }
-        public async Task<IActionResult> trangchu1(string searchString)
-        {
-            var donhang = from b in _context.DonHang
-                          select b;
-            if (!String.IsNullOrEmpty(searchString))
-            {
-                donhang = donhang.Where(s => s.TenSP!.Contains(searchString));
-            }
-            return View(await donhang.ToListAsync());
-        }
 
-        // GET: DonHangs/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var donHang = await _context.DonHang
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (donHang == null)
-            {
-                return NotFound();
-            }
-
-            return View(donHang);
-        }
-
-
-
-        //Chi tiết sp người dùng (UserDetails)
-        public async Task<IActionResult> UserDetails(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var donHang = await _context.DonHang
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (donHang == null)
-            {
-                return NotFound();
-            }
-
-            return View(donHang);
-        }
-        // GET: DonHangs/Create
-        public IActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: DonHangs/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
+         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,TenSP,NgayMua,SoLuong,GiaTien,ProfilePicture")] DonHang donHang)
+        public async Task<IActionResult> Create([Bind("Id,TenSP,CauHinh,SoLuong,GiaTien,ProfilePicture")] DonHang donHang)
         {
             if (ModelState.IsValid)
             {
@@ -145,7 +64,7 @@ namespace MuaBanPC_LapTop.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,TenSP,NgayMua,SoLuong,GiaTien,ProfilePicture")] DonHang donHang)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,TenSP,CauHinh,SoLuong,GiaTien,ProfilePicture")] DonHang donHang)
         {
             if (id != donHang.Id)
             {
@@ -208,5 +127,6 @@ namespace MuaBanPC_LapTop.Controllers
         {
             return _context.DonHang.Any(e => e.Id == id);
         }
+    
     }
 }

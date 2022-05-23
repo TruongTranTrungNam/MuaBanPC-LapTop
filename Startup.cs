@@ -55,7 +55,7 @@ namespace MuaBanPC_LapTop
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=TrangChu}/{id?}");
+                    pattern: "{controller=DonHangs}/{action=trangchu1}/{id?}");
             });
         }
     }

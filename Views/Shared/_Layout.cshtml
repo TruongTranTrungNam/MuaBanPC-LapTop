@@ -1,106 +1,136 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="font-family:Tahoma">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] MuaBanPC-LapTop</title>
     @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />*@
     <link rel="stylesheet" href="~/css/site.css" />
-    
+    <link href="//db.onlinewebfonts.com/c/cd0381aa3322dff4babd137f03829c8c?family=Tahoma" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="~/css/footer.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-secondary border-bottom box-shadow mb-3">
+    <header style="background-color:deepskyblue;">
+        <nav style="height:100px" class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light  border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="TrangChu"><img style="width:40px;height:40px" src="https://lh3.googleusercontent.com/a-/AOh14GiI9L5Fog0drr_C7DvmLl_9loRQTpSWF9h4up65=s96-c-rg-br100">PC-LapTop</a>
+                <a class="navbar-brand" asp-area="" asp-controller="DonHangs" asp-action="trangchu1"><img style="width:40px;height:40px" src="https://icon-library.com/images/pc-icon-png/pc-icon-png-2.jpg"> PC-LapTop</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <div class="topnav">
-                        <input type="text" placeholder="Tìm Kiếm...">
-                    </div>
-                    <ul class="navbar-nav flex-grow-1">
+                    @*<div class="topnav">
+                    <input type="text" placeholder="Tìm Kiếm...">
+                </div>*@
+                    @*<form asp-controller="DonHangs" asp-action="trangchu1" method="get">
+                    <p>
+
+                        <input type="text" name="SearchString" />
+                        <button class="btn btn-secondary" type="submit"><i class="bi bi-search"></i></button>
+                    </p>
+                </form>*@
+                    <ul style="font-size:20px" class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="TrangChu">Trang Chủ</a>
+                            <a class="nav-link text-dark " asp-area="" asp-controller="DonHangs" asp-action="trangchu1">Trang Chủ</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="DMSP">Danh Mục Sản Phẩm</a>
                         </li>
-                        <li class="nav-item">
-                            <a href="https://www.youtube.com/c/GEARVNofficial" target="_blank" class="nav-link text-dark"> Video</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="https://gvn360.com/" target="_blank" class="nav-link text-dark">Tin Tức</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="DangKy">Đăng Ký </a>
-                        </li>
+                        @*<li class="nav-item">
+                        <a href="https://www.youtube.com/c/GEARVNofficial" target="_blank" class="nav-link text-dark"> Video</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://gvn360.com/" target="_blank" class="nav-link text-dark">Tin Tức</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="DangKy">Đăng Ký </a>
+                    </li>*@
 
 
                     </ul>
                 </div>
             </div>
+           
+            <a class="nav-link text-dark " asp-area="ADMIN" asp-controller="ADMIN" asp-action="IndexAdmin">Admin</a>
             <a class="nav-link text-dark " asp-area="" asp-controller="DonHangs" asp-action="trangchu1"><i class="fas fa-shopping-cart fa-2x mr-3"></i></a>
         </nav>
     </header>
+
     <div class="container">
+       
         <main role="main" class="pb-3">
+           
             @RenderBody()
         </main>
     </div>
     <br /><br />
-    
 
     
-    <footer class="footer-distributed">
 
-        <div class="footer-left">
+          <footer class="footer-distributed">
 
-            <h3>PC-LapTop<span>TN</span></h3>
+              <div class="footer-left">
 
-            <p class="footer-links">
-                <a href="#" class="link-1">Trang Chủ</a>
+                  <h3>PC-LapTop<span>TN</span></h3>
 
-                <a href="#">Danh mục SP</a>
+                  <p class="footer-links">
+                      <a href="#" class="link-1">Trang Chủ</a>
 
-                <a href="#">Video</a>
+                      <a href="#">Danh mục SP</a>
 
-                <a href="#">Tin tức</a>
+                      <a href="#">Video</a>
 
-                <a href="#">Đăng ký</a>
+                      <a href="#">Tin tức</a>
 
-                
-            </p>
+                      <a href="#">Đăng ký</a>
 
-            <p class="footer-company-name">&copy; MuaBanPC Trung Nam</p>
-        </div>
 
-        <div class="footer-center">
+                  </p>
 
-            <div>
-                <i class="fa fa-map-marker"></i>
-                <p><span>20 Nguyễn Trãi</span> Nha Trang , Khánh Hòa</p>
-            </div>
+                  <p class="footer-company-name">&copy; MuaBanPC Trung Nam</p>
+              </div>
 
-            <div>
-                <i class="fa fa-phone"></i>
-                <p>0793559976-Liên hệ tư vấn</p>
-            </div>
+              <div class="footer-center">
 
-            <div>
-                <i class="fa fa-envelope"></i>
-                <p><a href="namtruong11122002@gmail.com">namtruong11122002@gmail.com</a></p>
-            </div>
+                  <div>
+                      <i class="fa fa-map-marker"></i>
+                      <p><span>20 Nguyễn Trãi</span> Nha Trang , Khánh Hòa</p>
+                  </div>
 
-        </div>
+                  <div>
+                      <i class="fa fa-phone"></i>
+                      <p>0793559976-Liên hệ tư vấn</p>
+                  </div>
 
-        
+                  <div>
+                      <i class="fa fa-envelope"></i>
+                      <p><a href="namtruong11122002@gmail.com">namtruong11122002@gmail.com</a></p>
+                  </div>
 
-    </footer>
+              </div>
+
+              <div class="footer-right">
+
+                  <p class="footer-company-about">
+                      <span>Về Cửa hàng PC-Laptop</span>
+                      Chúng tôi phục vụ theo nhu cầu của bạn.
+                  </p>
+
+                  <div class="footer-icons">
+
+                      <a href="#"><i class="bi bi-facebook"></i></a>
+                      <a href="#"><i class="bi bi-instagram"></i></a>
+                      <a href="#"><i class="bi bi-chat-dots"></i></a>
+                      <a href="#"><i class="bi bi-youtube"></i></a>
+
+                  </div>
+
+              </div>
+
+
+          </footer>
 
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
